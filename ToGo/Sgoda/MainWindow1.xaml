@@ -1,0 +1,50 @@
+﻿<Window x:Class="ToGo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToGo"
+        mc:Ignorable="d"
+        Title="貳行訂房網" Height="800" Width="1225">
+    <Viewbox Stretch="Fill">
+        <Grid Height="1080" Width="1920">
+            <Image Source="專題/a-bruised-reed-he-will-not-break-ldlw4pva-c28776e7606b42908a9910d30962a8b4.jpg" Opacity="0.4"/>
+            <StackPanel Background="Gray" Opacity="0.5" HorizontalAlignment="Center" Height="556" Margin="611,300,509,224" VerticalAlignment="Center" Width="800"/>
+            <StackPanel Background="White" Opacity="0.9"  HorizontalAlignment="Left" Height="48" Margin="656,496,0,0" VerticalAlignment="Top" Width="692"/>
+            <DatePicker HorizontalAlignment="Left" Margin="718,506,0,0" VerticalAlignment="Top" Height="27" Width="190"/>
+            <DatePicker HorizontalAlignment="Left" Margin="1112,506,0,0" VerticalAlignment="Top" Height="27" Width="190"/>
+            <Label Content="～" Foreground="#FF494747" HorizontalAlignment="Left" Margin="977,491,0,0" VerticalAlignment="Top" FontSize="36"/>
+            <Label Content="國家或城市" Margin="656,316,710,726" FontSize="20" FontWeight="Bold" Foreground="#FF494747"/>
+            <Label Content="日期" Foreground="#FF494747"  Margin="656,448,710,594" FontSize="20" FontWeight="Bold"/>
+            <TextBox Foreground="#FF494747" HorizontalAlignment="Left" Height="51" Margin="656,359,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="692" FontSize="36"/>
+            <Label Content="住宿人數" Foreground="#FF494747"   FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="656,597,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="51" Margin="656,637,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="36"/>
+            <Label Content="間客房" Foreground="#FF494747"   FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="934,643,0,0" VerticalAlignment="Top"/>
+            <TextBox HorizontalAlignment="Left" Height="51" Margin="656,717,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="36"/>
+            <Label Content="位住宿" Foreground="#FF494747"   FontSize="20" FontWeight="Bold" HorizontalAlignment="Left" Margin="934,723,0,0" VerticalAlignment="Top"/>
+            <Button Content="搜出好房" HorizontalAlignment="Left" Margin="1133,637,0,0" VerticalAlignment="Top" Width="215" Height="131" FontSize="24">
+                <Button.Effect>
+                    <DropShadowEffect Color="#FF575757"/>
+                </Button.Effect>
+            </Button>
+            <Label Name="GreetLabel" Content="新朋友嗎？ 歡迎加入貳行大家庭唷！" HorizontalAlignment="Left" Margin="611,193,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+            <Button Name="NewMemberButton1" Content="立即加入" Foreground="LightSeaGreen" BorderThickness="0" Background="Transparent" HorizontalAlignment="Left" Margin="1016,198,0,0" VerticalAlignment="Top" FontSize="23" Click="Button_Click_1"/>
+            <Label Content="等不及要展開下次的旅行了嗎？" HorizontalAlignment="Left" Margin="611,238,0,0" VerticalAlignment="Top" FontSize="20"/>
+            <StackPanel Name="stackPanel1" Background="Gray" HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="1920"/>
+            <Button Name="LoginButton" Content="會員登入" Foreground="Snow" Background="Gray" BorderThickness="0"  HorizontalAlignment="Left" Margin="1660,10,0,0" VerticalAlignment="Top" Width="115" Height="55" FontSize="20" Click="Button_Click"/>
+            <Button Name="NewMemberButton" Content="新朋友加入" Foreground="Snow" BorderThickness="0" Background="Gray" HorizontalAlignment="Left" Margin="1776,10,0,0" VerticalAlignment="Top" Width="115" Height="55" FontSize="20" Click="Button_Click_1"/>
+            <Button  Content="旅人好評" Foreground="Snow" BorderThickness="0" Background="Gray"  HorizontalAlignment="Left" Margin="334,11,0,0" VerticalAlignment="Top" Width="80" Height="56" FontSize="16" RenderTransformOrigin="-0.338,0.502"/>
+            <Button  Content="熱門景點" Foreground="Snow" BorderThickness="0" Background="Gray"  HorizontalAlignment="Left" Margin="231,11,0,0" VerticalAlignment="Top" Width="80" Height="56" FontSize="16"/>
+            <Button  Content="首頁" Foreground="Snow" BorderThickness="0" Background="Gray"  HorizontalAlignment="Left" Margin="123,11,0,0" VerticalAlignment="Top" Width="81" Height="56" FontSize="16"/>
+            <StackPanel Background="Gray"  HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="1920" Margin="0,1016,0,0"/>
+            <Button  Content="關於我們" Foreground="Snow" BorderThickness="0" Background="Gray"   HorizontalAlignment="Left" Margin="33,1024,0,0" VerticalAlignment="Top" Width="81" Height="56" FontSize="16"/>
+            <Button  Content="聯絡我們" Foreground="Snow" BorderThickness="0" Background="Gray"   HorizontalAlignment="Left" Margin="156,1024,0,0" VerticalAlignment="Top" Width="81" Height="56" FontSize="16"/>
+            <Button  Content="隱私權政策" Foreground="Snow" BorderThickness="0" Background="Gray"   HorizontalAlignment="Left" Margin="270,1024,0,0" VerticalAlignment="Top" Width="81" Height="56" FontSize="16"/>
+            <Button  Content="職缺消息" Foreground="Snow" BorderThickness="0" Background="Gray"   HorizontalAlignment="Left" Margin="401,1024,0,0" VerticalAlignment="Top" Width="81" Height="56" FontSize="16"/>
+            <Button  Content="我是房東" Foreground="Snow" BorderThickness="0" Background="Gray"   HorizontalAlignment="Left" Margin="524,1024,0,0" VerticalAlignment="Top" Width="81" Height="56" FontSize="16" Click="Button_Click_2"/>
+            <Image Source="專題/擷取1.JPG" HorizontalAlignment="Left" Height="80" Margin="10,-10,0,0" VerticalAlignment="Top" Width="104"/>
+
+        </Grid>
+
+    </Viewbox>
+</Window>

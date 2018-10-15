@@ -1,0 +1,37 @@
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\bin\Debug\Sgoda.exe.config
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\bin\Debug\Sgoda.exe
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\bin\Debug\Sgoda.pdb
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\TwoGo.csprojAssemblyReference.cache
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\CMLogin.g.cs
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\CMmaker.g.cs
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\MainWindow.g.cs
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\App.g.cs
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\Sgoda_MarkupCompile.cache
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\Sgoda_MarkupCompile.lref
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\CMLogin.baml
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\CMmaker.baml
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\MainWindow.baml
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\Sgoda.g.resources
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\Sgoda.Properties.Resources.resources
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\TwoGo.csproj.GenerateResource.cache
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\TwoGo.csproj.CoreCompileInputs.cache
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\Sgoda.exe
+C:\Users\傅建國\Desktop\20181005貳行 TWOGO\Sgoda\Sgoda\obj\Debug\Sgoda.pdb
+D:\期中專題\Sgoda\Sgoda\bin\Debug\Sgoda.exe.config
+D:\期中專題\Sgoda\Sgoda\bin\Debug\Sgoda.exe
+D:\期中專題\Sgoda\Sgoda\bin\Debug\Sgoda.pdb
+D:\期中專題\Sgoda\Sgoda\obj\Debug\MemberLogin.g.cs
+D:\期中專題\Sgoda\Sgoda\obj\Debug\NewMember.g.cs
+D:\期中專題\Sgoda\Sgoda\obj\Debug\MainWindow.g.cs
+D:\期中專題\Sgoda\Sgoda\obj\Debug\App.g.cs
+D:\期中專題\Sgoda\Sgoda\obj\Debug\Sgoda_MarkupCompile.cache
+D:\期中專題\Sgoda\Sgoda\obj\Debug\Sgoda_MarkupCompile.lref
+D:\期中專題\Sgoda\Sgoda\obj\Debug\MemberLogin.baml
+D:\期中專題\Sgoda\Sgoda\obj\Debug\NewMember.baml
+D:\期中專題\Sgoda\Sgoda\obj\Debug\MainWindow.baml
+D:\期中專題\Sgoda\Sgoda\obj\Debug\Sgoda.g.resources
+D:\期中專題\Sgoda\Sgoda\obj\Debug\Sgoda.Properties.Resources.resources
+D:\期中專題\Sgoda\Sgoda\obj\Debug\TwoGo.csproj.GenerateResource.cache
+D:\期中專題\Sgoda\Sgoda\obj\Debug\TwoGo.csproj.CoreCompileInputs.cache
+D:\期中專題\Sgoda\Sgoda\obj\Debug\Sgoda.exe
+D:\期中專題\Sgoda\Sgoda\obj\Debug\Sgoda.pdb

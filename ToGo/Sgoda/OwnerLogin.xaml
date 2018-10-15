@@ -1,0 +1,42 @@
+﻿<Window x:Class="ToGo.OwnerLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToGo"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        Title="OwnerLogin" Height="598.174" Width="421">
+    <Window.Resources>
+        <Storyboard x:Key="windowUp">
+            <DoubleAnimation Storyboard.TargetName="translateTransform1" Storyboard.TargetProperty="Y" From="110" To="40" Duration="0:0:0.3"></DoubleAnimation>
+        </Storyboard>
+    </Window.Resources>
+    <Grid RenderTransformOrigin="0.5,0.5">
+        <Grid.RenderTransform>
+            <TransformGroup>
+                <TranslateTransform x:Name="translateTransform1"/>
+            </TransformGroup>
+        </Grid.RenderTransform>
+        <Rectangle Fill="#FFE8E8E8" HorizontalAlignment="Left" Height="481" Margin="29,22,0,0" RadiusY="16" RadiusX="16" Stroke="White" StrokeThickness="14" VerticalAlignment="Top" Width="360"/>
+        <Label Content="登入" FontSize="25" HorizontalAlignment="Left" Margin="60,49,0,0" VerticalAlignment="Top" FontWeight="Bold" Height="42" Width="70"/>
+        <Label Content="電子信箱" FontSize="16" HorizontalAlignment="Left" Margin="60,100,0,0" VerticalAlignment="Top" Height="29" Width="84"/>
+        <Label Content="密碼" FontSize="16" HorizontalAlignment="Left" Margin="60,196,0,0" VerticalAlignment="Top" Height="29" Width="48"/>
+        <TextBox Name="UsernameTextBox" HorizontalAlignment="Left" Height="35" Margin="71,139,0,0" TextWrapping="Wrap" Text="zj4ru04eji6@yahoo.com.tw" VerticalAlignment="Top" Width="280" FontSize="18"/>
+        <PasswordBox Name="PasswordTextBox" HorizontalAlignment="Left" Margin="71,235,0,0" VerticalAlignment="Top" Password="801231" Height="35" Width="280"/>
+        <Button BorderThickness="0" Foreground="Blue" Background="Transparent" Content="忘記密碼？ 別慌，點這就對啦！" HorizontalAlignment="Left" Margin="71,298,0,0" VerticalAlignment="Top" Width="174" Height="19"/>
+        <Button BorderThickness="0" Content="登入" Foreground="White" FontSize="20" HorizontalAlignment="Left" Margin="82,344,0,0" VerticalAlignment="Top" Width="259" Height="41" Background="#FFF54C69" Click="Button_Click"></Button>
+        <Label Content="---------------------------------------------------------------" HorizontalAlignment="Left" Margin="40,400,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="16" Content="是新朋友嗎?" HorizontalAlignment="Left" Margin="71,439,0,0" VerticalAlignment="Top"/>
+        <Button Foreground="#FFF54C69" Background="White" BorderBrush="#FFF54C69" Content="建立新的帳戶" HorizontalAlignment="Left" Margin="221,439,0,0" VerticalAlignment="Top" Width="130" Height="30" Click="Button_Click_2"/>
+        <Button HorizontalAlignment="Left" Margin="389,0,0,0" VerticalAlignment="Top" Width="30" Height="30" BorderBrush="{x:Null}" Click="Button_Click_1" Foreground="{x:Null}" ContentStringFormat="">
+            <Button.Background>
+                <ImageBrush ImageSource="Image/Danieledesantis-Playstation-Flat-Playstation-cross-black-and-white.ico"/>
+            </Button.Background>
+        </Button>
+    </Grid>
+</Window>

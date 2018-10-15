@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ToGoDBModelStoreContainer" CdmEntityContainer="ToGoDBEntities1">
+    <EntitySetMapping Name="Hotels">
+      <EntityTypeMapping TypeName="ToGoDBModel.Hotel">
+        <MappingFragment StoreEntitySet="Hotel">
+          <ScalarProperty Name="HotelID" ColumnName="HotelID" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+          <ScalarProperty Name="HotelNameEN" ColumnName="HotelNameEN" />
+          <ScalarProperty Name="HotelNameCN" ColumnName="HotelNameCN" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CityID" ColumnName="CityID" />
+          <ScalarProperty Name="AddressCH" ColumnName="AddressCH" />
+          <ScalarProperty Name="AddressEN" ColumnName="AddressEN" />
+          <ScalarProperty Name="StarRated" ColumnName="StarRated" />
+          <ScalarProperty Name="TaxIDNumber" ColumnName="TaxIDNumber" />
+          <ScalarProperty Name="RegisterDate" ColumnName="RegisterDate" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="ToGoDBModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+          <ScalarProperty Name="HotelID" ColumnName="HotelID" />
+          <ScalarProperty Name="HotelName" ColumnName="HotelName" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="CardHolderName" ColumnName="CardHolderName" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="OrderCode" ColumnName="OrderCode" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="Request" ColumnName="Request" />
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+          <ScalarProperty Name="IsPay" ColumnName="IsPay" />
+          <ScalarProperty Name="OrderState" ColumnName="OrderState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="ToGoDBModel.Member">
+        <MappingFragment StoreEntitySet="Member">
+          <ScalarProperty Name="IsLocking" ColumnName="IsLocking" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="MemberNumber" ColumnName="MemberNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Owners">
+      <EntityTypeMapping TypeName="ToGoDBModel.Owner">
+        <MappingFragment StoreEntitySet="Owner">
+          <ScalarProperty Name="IsLocking" ColumnName="IsLocking" />
+          <ScalarProperty Name="Line" ColumnName="Line" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="OwnerName" ColumnName="OwnerName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Countries">
+      <EntityTypeMapping TypeName="ToGoDBModel.Country">
+        <MappingFragment StoreEntitySet="Country">
+          <ScalarProperty Name="CountryENName" ColumnName="CountryENName" />
+          <ScalarProperty Name="CountryCHName" ColumnName="CountryCHName" />
+          <ScalarProperty Name="CountryID" ColumnName="CountryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceAndFacilities">
+      <EntityTypeMapping TypeName="ToGoDBModel.ServiceAndFacility">
+        <MappingFragment StoreEntitySet="ServiceAndFacility">
+          <ScalarProperty Name="ServiceFacilityENName" ColumnName="ServiceFacilityENName" />
+          <ScalarProperty Name="ServiceFacilityCHName" ColumnName="ServiceFacilityCHName" />
+          <ScalarProperty Name="ServiceFacilityID" ColumnName="ServiceFacilityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderStates">
+      <EntityTypeMapping TypeName="ToGoDBModel.OrderState">
+        <MappingFragment StoreEntitySet="OrderState">
+          <ScalarProperty Name="OrderStateName" ColumnName="OrderStateName" />
+          <ScalarProperty Name="OrderStateNumber" ColumnName="OrderStateNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

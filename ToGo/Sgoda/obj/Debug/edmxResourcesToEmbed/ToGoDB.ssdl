@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ToGoDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CountryCHName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CountryENName" Type="varchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="HotelID" />
+    </Key>
+    <Property Name="HotelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OwnerID" Type="int" />
+    <Property Name="HotelNameEN" Type="varchar" MaxLength="50" />
+    <Property Name="HotelNameCN" Type="nvarchar" MaxLength="50" />
+    <Property Name="CountryID" Type="int" />
+    <Property Name="CityID" Type="int" />
+    <Property Name="AddressCH" Type="nvarchar" MaxLength="200" />
+    <Property Name="AddressEN" Type="varchar" MaxLength="200" />
+    <Property Name="StarRated" Type="int" />
+    <Property Name="TaxIDNumber" Type="varchar" MaxLength="15" />
+    <Property Name="RegisterDate" Type="date" />
+    <Property Name="Description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="CountryID" Type="int" Nullable="false" />
+    <Property Name="IsLocking" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="HotelID" Type="int" />
+    <Property Name="HotelName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="RoomName" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="OrderDate" Type="date" Nullable="false" />
+    <Property Name="FirstName" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="CountryID" Type="int" Nullable="false" />
+    <Property Name="CardNumber" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="CardHolderName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="StartDate" Type="date" Nullable="false" />
+    <Property Name="EndDate" Type="date" Nullable="false" />
+    <Property Name="OrderCode" Type="int" />
+    <Property Name="TotalPrice" Type="int" Nullable="false" />
+    <Property Name="Request" Type="nvarchar" MaxLength="50" />
+    <Property Name="MemberNumber" Type="int" />
+    <Property Name="IsPay" Type="bit" Nullable="false" />
+    <Property Name="OrderState" Type="int" />
+  </EntityType>
+  <EntityType Name="OrderState">
+    <Key>
+      <PropertyRef Name="OrderStateNumber" />
+    </Key>
+    <Property Name="OrderStateNumber" Type="int" Nullable="false" />
+    <Property Name="OrderStateName" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Owner">
+    <Key>
+      <PropertyRef Name="OwnerID" />
+    </Key>
+    <Property Name="OwnerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="OwnerName" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Line" Type="varchar" MaxLength="20" />
+    <Property Name="IsLocking" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceAndFacility">
+    <Key>
+      <PropertyRef Name="ServiceFacilityID" />
+    </Key>
+    <Property Name="ServiceFacilityID" Type="int" Nullable="false" />
+    <Property Name="ServiceFacilityCHName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ServiceFacilityENName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Hotel_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="0..1" />
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Hotel">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Hotel_Owner">
+    <End Role="Owner" Type="Self.Owner" Multiplicity="0..1" />
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owner">
+        <PropertyRef Name="OwnerID" />
+      </Principal>
+      <Dependent Role="Hotel">
+        <PropertyRef Name="OwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Member" Type="Self.Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Country">
+    <End Role="Country" Type="Self.Country" Multiplicity="1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Hotel">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="HotelID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="HotelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Member">
+    <End Role="Member" Type="Self.Member" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="MemberNumber" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="MemberNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_OrderState">
+    <End Role="OrderState" Type="Self.OrderState" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderState">
+        <PropertyRef Name="OrderStateNumber" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="OrderState" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ToGoDBModelStoreContainer">
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hotel" EntityType="Self.Hotel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderState" EntityType="Self.OrderState" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Owner" EntityType="Self.Owner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceAndFacility" EntityType="Self.ServiceAndFacility" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Hotel_Country" Association="Self.FK_Hotel_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Hotel" EntitySet="Hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Hotel_Owner" Association="Self.FK_Hotel_Owner">
+      <End Role="Owner" EntitySet="Owner" />
+      <End Role="Hotel" EntitySet="Hotel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Country" Association="Self.FK_Member_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Member" EntitySet="Member" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Country" Association="Self.FK_Order_Country">
+      <End Role="Country" EntitySet="Country" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Hotel" Association="Self.FK_Order_Hotel">
+      <End Role="Hotel" EntitySet="Hotel" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Member" Association="Self.FK_Order_Member">
+      <End Role="Member" EntitySet="Member" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_OrderState" Association="Self.FK_Order_OrderState">
+      <End Role="OrderState" EntitySet="OrderState" />
+      <End Role="Order" EntitySet="Order" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

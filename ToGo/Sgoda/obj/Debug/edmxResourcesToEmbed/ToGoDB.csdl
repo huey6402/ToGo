@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ToGoDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="HotelID" />
+    </Key>
+    <Property Name="HotelID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="OwnerID" Type="Int32" />
+    <Property Name="HotelNameEN" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="HotelNameCN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CountryID" Type="Int32" />
+    <Property Name="CityID" Type="Int32" />
+    <Property Name="AddressCH" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="AddressEN" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="StarRated" Type="Int32" />
+    <Property Name="TaxIDNumber" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+    <Property Name="RegisterDate" Type="DateTime" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="Self.FK_Order_Hotel" FromRole="Hotel" ToRole="Order" />
+    <NavigationProperty Name="Owner" Relationship="ToGoDBModel.FK_Hotel_Owner" FromRole="Hotel" ToRole="Owner" />
+    <NavigationProperty Name="Country" Relationship="ToGoDBModel.FK_Hotel_Country" FromRole="Hotel" ToRole="Country" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="HotelID" Type="Int32" />
+    <Property Name="HotelName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RoomName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <Property Name="CardNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="CardHolderName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="OrderCode" Type="Int32" />
+    <Property Name="TotalPrice" Type="Int32" Nullable="false" />
+    <Property Name="Request" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MemberNumber" Type="Int32" />
+    <Property Name="IsPay" Type="Boolean" Nullable="false" />
+    <Property Name="OrderState" Type="Int32" />
+    <NavigationProperty Name="Hotel" Relationship="Self.FK_Order_Hotel" FromRole="Order" ToRole="Hotel" />
+    <NavigationProperty Name="Member" Relationship="ToGoDBModel.FK_Order_Member" FromRole="Order" ToRole="Member" />
+    <NavigationProperty Name="Country" Relationship="ToGoDBModel.FK_Order_Country" FromRole="Order" ToRole="Country" />
+    <NavigationProperty Name="OrderState1" Relationship="ToGoDBModel.FK_Order_OrderState" FromRole="Order" ToRole="OrderState" />
+  </EntityType>
+  <Association Name="FK_Order_Hotel">
+    <End Role="Hotel" Type="Self.Hotel" Multiplicity="0..1" />
+    <End Role="Order" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotel">
+        <PropertyRef Name="HotelID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="HotelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ToGoDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Hotels" EntityType="Self.Hotel" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <AssociationSet Name="FK_Order_Hotel" Association="Self.FK_Order_Hotel">
+      <End Role="Hotel" EntitySet="Hotels" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <EntitySet Name="Members" EntityType="ToGoDBModel.Member" />
+    <AssociationSet Name="FK_Order_Member" Association="ToGoDBModel.FK_Order_Member">
+      <End Role="Member" EntitySet="Members" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <EntitySet Name="Owners" EntityType="ToGoDBModel.Owner" />
+    <AssociationSet Name="FK_Hotel_Owner" Association="ToGoDBModel.FK_Hotel_Owner">
+      <End Role="Owner" EntitySet="Owners" />
+      <End Role="Hotel" EntitySet="Hotels" />
+    </AssociationSet>
+    <EntitySet Name="Countries" EntityType="ToGoDBModel.Country" />
+    <AssociationSet Name="FK_Hotel_Country" Association="ToGoDBModel.FK_Hotel_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Hotel" EntitySet="Hotels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Member_Country" Association="ToGoDBModel.FK_Member_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Member" EntitySet="Members" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Order_Country" Association="ToGoDBModel.FK_Order_Country">
+      <End Role="Country" EntitySet="Countries" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+    <EntitySet Name="ServiceAndFacilities" EntityType="ToGoDBModel.ServiceAndFacility" />
+    <EntitySet Name="OrderStates" EntityType="ToGoDBModel.OrderState" />
+    <AssociationSet Name="FK_Order_OrderState" Association="ToGoDBModel.FK_Order_OrderState">
+      <End Role="OrderState" EntitySet="OrderStates" />
+      <End Role="Order" EntitySet="Orders" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberNumber" />
+    </Key>
+    <Property Name="MemberNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="CountryID" Type="Int32" Nullable="false" />
+    <Property Name="IsLocking" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="ToGoDBModel.FK_Order_Member" FromRole="Member" ToRole="Order" />
+    <NavigationProperty Name="Country" Relationship="ToGoDBModel.FK_Member_Country" FromRole="Member" ToRole="Country" />
+  </EntityType>
+  <Association Name="FK_Order_Member">
+    <End Type="ToGoDBModel.Member" Role="Member" Multiplicity="0..1" />
+    <End Type="ToGoDBModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Member">
+        <PropertyRef Name="MemberNumber" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="MemberNumber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Owner">
+    <Key>
+      <PropertyRef Name="OwnerID" />
+    </Key>
+    <Property Name="OwnerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="OwnerName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Line" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IsLocking" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Hotels" Relationship="ToGoDBModel.FK_Hotel_Owner" FromRole="Owner" ToRole="Hotel" />
+  </EntityType>
+  <Association Name="FK_Hotel_Owner">
+    <End Type="ToGoDBModel.Owner" Role="Owner" Multiplicity="0..1" />
+    <End Type="ToGoDBModel.Hotel" Role="Hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Owner">
+        <PropertyRef Name="OwnerID" />
+      </Principal>
+      <Dependent Role="Hotel">
+        <PropertyRef Name="OwnerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="CountryID" />
+    </Key>
+    <Property Name="CountryID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CountryCHName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CountryENName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Hotels" Relationship="ToGoDBModel.FK_Hotel_Country" FromRole="Country" ToRole="Hotel" />
+    <NavigationProperty Name="Members" Relationship="ToGoDBModel.FK_Member_Country" FromRole="Country" ToRole="Member" />
+    <NavigationProperty Name="Orders" Relationship="ToGoDBModel.FK_Order_Country" FromRole="Country" ToRole="Order" />
+  </EntityType>
+  <Association Name="FK_Hotel_Country">
+    <End Type="ToGoDBModel.Country" Role="Country" Multiplicity="0..1" />
+    <End Type="ToGoDBModel.Hotel" Role="Hotel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Hotel">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Member_Country">
+    <End Type="ToGoDBModel.Country" Role="Country" Multiplicity="1" />
+    <End Type="ToGoDBModel.Member" Role="Member" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Member">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Order_Country">
+    <End Type="ToGoDBModel.Country" Role="Country" Multiplicity="1" />
+    <End Type="ToGoDBModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Country">
+        <PropertyRef Name="CountryID" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CountryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ServiceAndFacility">
+    <Key>
+      <PropertyRef Name="ServiceFacilityID" />
+    </Key>
+    <Property Name="ServiceFacilityID" Type="Int32" Nullable="false" />
+    <Property Name="ServiceFacilityCHName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ServiceFacilityENName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="OrderState">
+    <Key>
+      <PropertyRef Name="OrderStateNumber" />
+    </Key>
+    <Property Name="OrderStateNumber" Type="Int32" Nullable="false" />
+    <Property Name="OrderStateName" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Orders" Relationship="ToGoDBModel.FK_Order_OrderState" FromRole="OrderState" ToRole="Order" />
+  </EntityType>
+  <Association Name="FK_Order_OrderState">
+    <End Type="ToGoDBModel.OrderState" Role="OrderState" Multiplicity="0..1" />
+    <End Type="ToGoDBModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderState">
+        <PropertyRef Name="OrderStateNumber" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="OrderState" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
