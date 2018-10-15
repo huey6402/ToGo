@@ -43,6 +43,7 @@
             <Button  Content="職缺消息" Foreground="Snow" BorderThickness="0" Background="Gray"   HorizontalAlignment="Left" Margin="401,1024,0,0" VerticalAlignment="Top" Width="81" Height="56" FontSize="16"/>
             <Button  Content="我是房東" Foreground="Snow" BorderThickness="0" Background="Gray"   HorizontalAlignment="Left" Margin="524,1024,0,0" VerticalAlignment="Top" Width="81" Height="56" FontSize="16" Click="Button_Click_2"/>
             <Image Source="專題/擷取1.JPG" HorizontalAlignment="Left" Height="80" Margin="10,-10,0,0" VerticalAlignment="Top" Width="104"/>
+            <Label Content="Label" HorizontalAlignment="Left" Margin="156,597,0,0" VerticalAlignment="Top"/>
 
         </Grid>
 
